@@ -1,0 +1,7 @@
+TOOLCHAIN = riscv32-champ-elf
+ISA = champ
+
+
+export TOOLCHAIN ISA
+include Makefile
+

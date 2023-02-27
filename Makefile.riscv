@@ -1,0 +1,7 @@
+TOOLCHAIN = riscv32-unknown-elf
+ISA := riscv
+
+
+export TOOLCHAIN ISA
+include Makefile
+
