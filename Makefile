@@ -11,9 +11,8 @@ CFLAGS = -O1 -nostdlib -nostartfiles -fstrict-volatile-bitfields
 CFLAGS += -Woverflow 
 CFLAGS += -DXLEN=${XLEN} 
 ISA_PREFIX := ${ISA}${XLEN}
-ROM_SECTIONS = --only-section .rodata* --only-section .text*
-ROM_OFFSET=0x00000000
 
+include src/platform/${PLATFORM}/Makefile
 export PRJ_DIR XLEN CC CFLAGS LD ELF2HEX PLATFORM ISA_PREFIX ROM_SECTIONS ROM_OFFSET
 include src/base/i/Makefile
 include src/base/m/Makefile
