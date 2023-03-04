@@ -3,7 +3,7 @@
  * Created Date: 2023-02-26 09:08:32 pm
  * Author: Mathieu Escouteloup
  * -----
- * Last Modified: 2023-02-27 08:26:39 am
+ * Last Modified: 2023-03-03 07:16:34 pm
  * Modified By: Mathieu Escouteloup
  * -----
  * License: See LICENSE.md
@@ -15,8 +15,8 @@
 
 MEMORY
 {
-  ROM      (rx)  : ORIGIN = 0x00000000, LENGTH = 0x00004000
-  RAM      (rwx) : ORIGIN = 0x00008000, LENGTH = 0x00004000
+  ROM      (rx)  : ORIGIN = 0x00000000, LENGTH = 0x00040000
+  RAM      (rwx) : ORIGIN = 0x00080000, LENGTH = 0x00040000
 }
 
 STACK_SIZE  = 0x0800;

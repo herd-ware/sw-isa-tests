@@ -12,7 +12,6 @@ CFLAGS += -Woverflow
 CFLAGS += -DXLEN=${XLEN} 
 ISA_PREFIX := ${ISA}${XLEN}
 
-
 export PRJ_DIR XLEN CC CFLAGS LD ELF2HEX PLATFORM ISA_PREFIX
 include src/base/i/Makefile
 include src/base/m/Makefile

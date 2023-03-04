@@ -12,6 +12,9 @@ ${BASE_B_${XLEN}_TEST}:
 	${CC} ${CFLAGS} ${BASE_B_CFLAGS} -c ${BASE_B_PATH}/$@.S -o ${PRJ_DIR}obj/${BASE_B_PRE}$@.o
 	${LD} -T ${PRJ_DIR}src/platform/${PLATFORM}/script.ld ${PRJ_DIR}obj/start.o ${PRJ_DIR}obj/${PLATFORM}.o ${PRJ_DIR}obj/${BASE_B_PRE}$@.o -o ${PRJ_DIR}elf/${BASE_B_PRE}$@.elf
 	python3 ${ELF2HEX} --input ${PRJ_DIR}elf/${BASE_B_PRE}$@.elf --output ${PRJ_DIR}hex/${BASE_B_PRE}$@.hex --wide 16
-	sed -n '1,1024p;1025q' ${PRJ_DIR}hex/${BASE_B_PRE}$@.hex > ${PRJ_DIR}hex/${BASE_B_PRE}$@-rom.hex
+	sed -n '1,16384p;16385q' ${PRJ_DIR}hex/${BASE_B_PRE}$@.hex > ${PRJ_DIR}hex/${BASE_B_PRE}$@-rom.hex
 	${TOOLCHAIN}-objdump -D ${PRJ_DIR}elf/${BASE_B_PRE}$@.elf > ${PRJ_DIR}list/${BASE_B_PRE}$@.list -M numeric
+	
+
+	 
 	

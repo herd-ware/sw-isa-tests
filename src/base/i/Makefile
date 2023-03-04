@@ -33,5 +33,5 @@ ${BASE_I_${XLEN}_TEST}:
 	${LD} -T ${PRJ_DIR}src/platform/${PLATFORM}/script.ld ${PRJ_DIR}obj/start.o ${PRJ_DIR}obj/${PLATFORM}.o ${PRJ_DIR}obj/${BASE_I_PRE}$@.o -o ${PRJ_DIR}elf/${BASE_I_PRE}$@.elf
 	${TOOLCHAIN}-objdump -D ${PRJ_DIR}elf/${BASE_I_PRE}$@.elf > ${PRJ_DIR}list/${BASE_I_PRE}$@.list -M numeric
 	python3 ${ELF2HEX} --input ${PRJ_DIR}elf/${BASE_I_PRE}$@.elf --output ${PRJ_DIR}hex/${BASE_I_PRE}$@.hex --wide 16 --word 1
-	sed -n '1,1024p;1025q' ${PRJ_DIR}hex/${BASE_I_PRE}$@.hex > ${PRJ_DIR}hex/${BASE_I_PRE}$@-rom.hex
+	sed -n '1,16384p;16385q' ${PRJ_DIR}hex/${BASE_I_PRE}$@.hex > ${PRJ_DIR}hex/${BASE_I_PRE}$@-rom.hex
 	

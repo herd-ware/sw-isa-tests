@@ -3,7 +3,7 @@
  * Created Date: 2023-02-26 09:08:32 pm
  * Author: Mathieu Escouteloup
  * -----
- * Last Modified: 2023-02-27 08:27:28 am
+ * Last Modified: 2023-03-03 03:32:08 pm
  * Modified By: Mathieu Escouteloup
  * -----
  * License: See LICENSE.md
@@ -120,6 +120,7 @@ test_restore:
 
 #define TEST_END \
 test_end: \
+  mv x10, GPR_TMASK; \
   j _end
 
 #define TEST_DATA \
