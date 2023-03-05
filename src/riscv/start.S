@@ -3,7 +3,7 @@
  * Created Date: 2023-02-26 09:08:32 pm
  * Author: Mathieu Escouteloup
  * -----
- * Last Modified: 2023-02-27 08:26:19 am
+ * Last Modified: 2023-03-05 09:38:05 am
  * Modified By: Mathieu Escouteloup
  * -----
  * License: See LICENSE.md
@@ -21,6 +21,7 @@
 .globl _start
 _start:
   la sp, _stack
+  jal _pltf_init
 
 ## ******************************
 ##          GLOBAL INIT

@@ -3,7 +3,7 @@
  * Created Date: 2023-02-26 09:08:32 pm
  * Author: Mathieu Escouteloup
  * -----
- * Last Modified: 2023-03-03 03:36:05 pm
+ * Last Modified: 2023-03-04 02:22:28 pm
  * Modified By: Mathieu Escouteloup
  * -----
  * License: See LICENSE.md
@@ -22,5 +22,6 @@
 #define IO_PLTF_ADDR_GPIOB_SET  0x1c004018
 #define IO_PLTF_ADDR_GPIOB_RST  0x1c00401c
 
+#define GPIOA_BIT_CYCLE   29
 #define GPIOA_BIT_INSTRET 30
 #define GPIOA_BIT_END     31
