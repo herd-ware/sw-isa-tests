@@ -13,7 +13,7 @@ CFLAGS += -DXLEN=${XLEN}
 ISA_PREFIX := ${ISA}${XLEN}
 
 include src/platform/${PLATFORM}/Makefile
-export PRJ_DIR XLEN CC CFLAGS LD ELF2HEX PLATFORM ISA_PREFIX ROM_SECTIONS ROM_OFFSET
+export PRJ_DIR XLEN CC CFLAGS LD ELF2HEX PLATFORM ISA_PREFIX BOOT_SECTIONS BOOT_OFFSET
 include src/base/i/Makefile
 include src/base/m/Makefile
 include src/base/a/Makefile

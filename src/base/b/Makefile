@@ -12,6 +12,6 @@ ${BASE_B_${XLEN}_TEST}:
 	${CC} ${CFLAGS} ${BASE_B_CFLAGS} -c ${BASE_B_PATH}/$@.S -o ${PRJ_DIR}obj/${BASE_B_PRE}$@.o
 	${LD} -T ${PRJ_DIR}src/platform/${PLATFORM}/script.ld ${PRJ_DIR}obj/start.o ${PRJ_DIR}obj/${PLATFORM}.o ${PRJ_DIR}obj/${BASE_B_PRE}$@.o -o ${PRJ_DIR}elf/${BASE_B_PRE}$@.elf
 	${TOOLCHAIN}-objdump -D ${PRJ_DIR}elf/${BASE_B_PRE}$@.elf > ${PRJ_DIR}list/${BASE_B_PRE}$@.list -M numeric
-	${TOOLCHAIN}-objcopy ${ROM_SECTIONS} ${PRJ_DIR}elf/${BASE_B_PRE}$@.elf ${PRJ_DIR}elf/${BASE_B_PRE}$@.rom.elf
-	python3 ${ELF2HEX} --input ${PRJ_DIR}elf/${BASE_B_PRE}$@.rom.elf --output ${PRJ_DIR}hex/${BASE_B_PRE}$@.rom.hex --offset ${ROM_OFFSET} --wide 16 --word 1
+	${TOOLCHAIN}-objcopy ${BOOT_SECTIONS} ${PRJ_DIR}elf/${BASE_B_PRE}$@.elf ${PRJ_DIR}elf/${BASE_B_PRE}$@.boot8.elf
+	python3 ${ELF2HEX} --input ${PRJ_DIR}elf/${BASE_B_PRE}$@.boot8.elf --output ${PRJ_DIR}hex/${BASE_B_PRE}$@.boot8.hex --offset ${BOOT_OFFSET} --wide 16 --word 1
 	

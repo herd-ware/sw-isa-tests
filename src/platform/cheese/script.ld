@@ -3,7 +3,7 @@
  * Created Date: 2023-02-26 09:08:32 pm
  * Author: Mathieu Escouteloup
  * -----
- * Last Modified: 2023-03-04 11:34:22 am
+ * Last Modified: 2023-04-05 08:02:48 am
  * Modified By: Mathieu Escouteloup
  * -----
  * License: See LICENSE.md
@@ -15,7 +15,7 @@
 
 MEMORY
 {
-  ROM      (rx)  : ORIGIN = 0x00000000, LENGTH = 0x00040000
+  BOOT     (rx)  : ORIGIN = 0x00000000, LENGTH = 0x00040000
   RAM      (rwx) : ORIGIN = 0x08000000, LENGTH = 0x00040000
 }
 
@@ -26,12 +26,12 @@ SECTIONS
 {
   .rodata 0x00000000 : { 
     *(.rodata) 
-  } > ROM
+  } > BOOT
 
   .text BOOT_PC : {
     KEEP(*start.o(.text*));  
     *(.text)
-  } > ROM
+  } > BOOT
   
   .data : { 
     *(.data) 
